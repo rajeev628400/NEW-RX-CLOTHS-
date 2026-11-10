@@ -1,0 +1,1 @@
+-- Intentionally empty. Product images remain in the website's local images folder.

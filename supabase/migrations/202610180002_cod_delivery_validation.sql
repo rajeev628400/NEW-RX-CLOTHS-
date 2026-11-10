@@ -1,0 +1,1 @@
+-- Intentionally empty. Checkout and delivery-order records are not stored.

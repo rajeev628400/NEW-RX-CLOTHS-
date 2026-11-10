@@ -1,0 +1,1 @@
+-- Intentionally empty. This demo does not store carts or orders in Supabase.

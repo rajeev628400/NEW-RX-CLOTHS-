@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title">
+  <title id="title">Product image not available</title>
+  <rect width="800" height="1000" fill="#eeeae4"/>
+  <path d="M300 375h200l60 260H240z" fill="none" stroke="#9b958c" stroke-width="8"/>
+  <path d="m300 375 45-85h110l45 85M365 290v85m70-85v85" fill="none" stroke="#9b958c" stroke-width="8"/>
+  <text x="400" y="720" fill="#625e58" font-family="sans-serif" font-size="28" text-anchor="middle">IMAGE NOT AVAILABLE</text>
+</svg>

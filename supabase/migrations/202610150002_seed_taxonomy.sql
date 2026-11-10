@@ -1,0 +1,1 @@
+-- Intentionally empty. Product categories and catalogue data stay in website files.
