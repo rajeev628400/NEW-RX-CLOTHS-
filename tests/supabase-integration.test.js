@@ -174,12 +174,15 @@ test('only address code accesses Supabase public tables', () => {
   const storefront = read('js', 'storefront.js');
   const adminPage = read('admin', 'index.html');
   const adminScript = path.join(root, 'js', 'admin.js');
+  const adminMarkupWithoutGtm = adminPage
+    .replace(/<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag Manager -->/, '')
+    .replace(/<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/, '');
 
   assert.match(storefront, /\.from\('customer_addresses'\)/);
   assert.doesNotMatch(storefront, /\.from\('(?!customer_addresses')[^']+'\)|\.rpc\(|functions\.invoke/);
   assert.match(storefront, /initializeAddresses\(\)/);
   assert.doesNotMatch(storefront, /initializeCheckout|initializeOrders/);
-  assert.doesNotMatch(adminPage, /supabase-client|supabase-js|product-form|Save product|<script/i);
+  assert.doesNotMatch(adminMarkupWithoutGtm, /supabase-client|supabase-js|product-form|Save product|<script/i);
   assert.equal(fs.existsSync(adminScript), false);
 });
 
@@ -231,6 +234,9 @@ test('demo COD checkout validates a local bag and stores no delivery details or 
 test('static SEO fallback files are present without inventing a public domain', () => {
   const robots = read('robots.txt');
   const notFound = read('404.html');
+  const notFoundWithoutGtm = notFound
+    .replace(/<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag Manager -->/, '')
+    .replace(/<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/, '');
   const vercel = JSON.parse(read('vercel.json'));
 
   assert.match(robots, /User-agent: \*/);
@@ -238,11 +244,14 @@ test('static SEO fallback files are present without inventing a public domain', 
   assert.match(notFound, /<title>Page not found \| RX CLOTHS<\/title>/);
   assert.match(notFound, /href="index\.html"/);
   assert.doesNotMatch(robots, /Sitemap:/i);
-  assert.doesNotMatch(notFound, /https?:\/\//i);
+  assert.doesNotMatch(notFoundWithoutGtm, /https?:\/\//i);
   assert.equal(vercel.headers.length, 1);
   assert.equal(vercel.headers[0].source, '/(.*)');
   const headers = Object.fromEntries(vercel.headers[0].headers.map(({ key, value }) => [key, value]));
   assert.match(headers['Content-Security-Policy'], /default-src 'self'/);
+  assert.match(headers['Content-Security-Policy'], /script-src[^;]*https:\/\/www\.googletagmanager\.com/);
+  assert.match(headers['Content-Security-Policy'], /'sha256-sZitcj\+5OPnqWfp85LKu\+W62fPr1HDjqk5a\+DaHoFO4='/);
+  assert.match(headers['Content-Security-Policy'], /frame-src https:\/\/www\.googletagmanager\.com/);
   assert.match(headers['Content-Security-Policy'], /https:\/\/pruhywawkvqqrapvvoef\.supabase\.co/);
   assert.equal(headers['X-Content-Type-Options'], 'nosniff');
   assert.equal(headers['X-Frame-Options'], 'DENY');
