@@ -122,7 +122,11 @@ test('local catalogue includes every collection image with unique demo prices', 
   kidsProducts.forEach((product) => {
     assert.equal(fs.existsSync(path.join(root, decodeURIComponent(product.images[0].src))), true);
   });
-  assert.match(read('index.html'), /src="images\/home%20page\.png"/);
+  const homepage = read('index.html');
+  assert.match(homepage, /src="home%20page\.png"/);
+  [...homepage.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].forEach(([, src]) => {
+    assert.equal(fs.existsSync(path.join(root, decodeURIComponent(src))), true, `homepage image exists: ${src}`);
+  });
 });
 
 test('store API exposes only authenticated session lookup, never catalogue or cart writes', async () => {

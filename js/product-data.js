@@ -46,7 +46,7 @@ window.RXProductData = {
         { color: 'Sand', size: 'L', stock: 4 }, { color: 'Sand', size: 'XL', stock: 1 }
       ],
       images: [
-        { src: 'images/men cloths/SHIRT/BOXY FIT SHIRT/Dark green striped shirt.jpg', alt: 'Dark green striped shirt' }
+        { src: 'mens-SHIRT/mens-BOXY FIT SHIRT/Midnight Green Stripe Shirt.jpg', alt: 'Dark green striped shirt' }
       ]
     },
     {
@@ -67,7 +67,7 @@ window.RXProductData = {
         { color: 'Charcoal', size: 'L', stock: 0 }, { color: 'Charcoal', size: 'XL', stock: 2 }
       ],
       images: [
-        { src: 'images/men cloths/T-SHIRT/REGULAR FIT T-SHIRT/Cotton On Men - Everyday Fit T-Shirt - Slate stone.jpg', alt: 'Slate-coloured short-sleeve T-shirt' }
+        { src: 'mens -T-SHIRT/mens-REGULAR FIT T-SHIRT/Cotton On Men - Everyday Fit T-Shirt - Slate stone.jpg', alt: 'Slate-coloured short-sleeve T-shirt' }
       ]
     },
     {
@@ -88,7 +88,7 @@ window.RXProductData = {
         { color: 'Dark indigo', size: '34', stock: 2 }, { color: 'Dark indigo', size: '36', stock: 2 }
       ],
       images: [
-        { src: 'images/men cloths/JEANS/STRAIGHT FIT JEAN/Men\'s Casual Loose Fit Straight Leg Jeans With Pockets.jpg', alt: 'Blue straight-leg jeans with pockets' }
+        { src: 'mens-JEANS/mens-STRAIGHT FIT JEAN/Light Wash Straight Jeans.jpg', alt: 'Blue straight-leg jeans with pockets' }
       ]
     },
     {
@@ -109,7 +109,7 @@ window.RXProductData = {
         { color: 'Deep green', size: 'L', stock: 0 }, { color: 'Deep green', size: 'XL', stock: 2 }
       ],
       images: [
-        { src: 'images/men cloths/T-SHIRT/REGULAR FIT T-SHIRT/Next REGULAR FIT - SMART SOFT TOUCH HEAVYWEIGHT T-SHIRT _ - T-shirt basic - neutral raglan.jpg', alt: 'Neutral short-sleeve T-shirt' }
+        { src: 'mens -T-SHIRT/mens-REGULAR FIT T-SHIRT/Next REGULAR FIT - SMART SOFT TOUCH HEAVYWEIGHT T-SHIRT _ - T-shirt basic - neutral raglan.jpg', alt: 'Neutral short-sleeve T-shirt' }
       ]
     },
     {
@@ -130,7 +130,7 @@ window.RXProductData = {
         { color: 'Black', size: 'M', stock: 4 }, { color: 'Black', size: 'L', stock: 2 }
       ],
       images: [
-        { src: 'images/women cloth/CLOTHING/DRESSES/Sky Blossom Floral Midi Dress.jpg', alt: 'Floral-print midi dress' }
+        { src: 'women cloth/CLOTHING/women-DRESSES/Sky Blossom Floral Midi Dress.jpg', alt: 'Floral-print midi dress' }
       ]
     },
     {
@@ -151,7 +151,7 @@ window.RXProductData = {
         { color: 'Terracotta', size: 'M', stock: 3 }, { color: 'Terracotta', size: 'L', stock: 0 }
       ],
       images: [
-        { src: 'images/women cloth/CLOTHING/TOPS/Mint Green Puff Top.jpg', alt: 'Mint-green puff-sleeve top' }
+        { src: 'women cloth/CLOTHING/women-TOPS/Mint Green Puff Top.jpg', alt: 'Mint-green puff-sleeve top' }
       ]
     },
     {
@@ -172,7 +172,7 @@ window.RXProductData = {
         { color: 'Sand', size: 'M', stock: 4 }, { color: 'Sand', size: 'L', stock: 2 }
       ],
       images: [
-        { src: 'images/women cloth/CLOTHING/TROUSERS/Brown Wide-Leg Trousers.jpg', alt: 'Brown wide-leg trousers' }
+        { src: 'women cloth/CLOTHING/women-TROUSERS/Brown Wide-Leg Trousers.jpg', alt: 'Brown wide-leg trousers' }
       ]
     },
     {
@@ -193,7 +193,7 @@ window.RXProductData = {
         { color: 'Sky blue', size: 'M', stock: 0 }, { color: 'Sky blue', size: 'L', stock: 2 }
       ],
       images: [
-        { src: 'images/women cloth/CLOTHING/SHIRTS/White Bow Shirt.jpg', alt: 'White collared shirt with a bow detail' }
+        { src: 'women cloth/CLOTHING/women-SHIRTS/White Bow Shirt.jpg', alt: 'White collared shirt with a bow detail' }
       ]
     },
   ]
@@ -232,10 +232,10 @@ window.RXProductData.products = [
 const menImageManifest = window.RXMenImageManifest;
 if (Array.isArray(menImageManifest)) {
   const existingMenProductIds = new Map([
-    ['images/men cloths/SHIRT/BOXY FIT SHIRT/Dark green striped shirt.jpg', 'rx-men-overshirt'],
-    ['images/men cloths/T-SHIRT/REGULAR FIT T-SHIRT/Cotton On Men - Everyday Fit T-Shirt - Slate stone.jpg', 'rx-men-cotton-tee'],
-    ['images/men cloths/JEANS/STRAIGHT FIT JEAN/Men\'s Casual Loose Fit Straight Leg Jeans With Pockets.jpg', 'rx-men-straight-jeans'],
-    ['images/men cloths/T-SHIRT/REGULAR FIT T-SHIRT/Next REGULAR FIT - SMART SOFT TOUCH HEAVYWEIGHT T-SHIRT _ - T-shirt basic - neutral raglan.jpg', 'rx-men-knit-polo']
+    ['mens-SHIRT/mens-BOXY FIT SHIRT/Midnight Green Stripe Shirt.jpg', 'rx-men-overshirt'],
+    ['mens -T-SHIRT/mens-REGULAR FIT T-SHIRT/Cotton On Men - Everyday Fit T-Shirt - Slate stone.jpg', 'rx-men-cotton-tee'],
+    ['mens-JEANS/mens-STRAIGHT FIT JEAN/Light Wash Straight Jeans.jpg', 'rx-men-straight-jeans'],
+    ['mens -T-SHIRT/mens-REGULAR FIT T-SHIRT/Next REGULAR FIT - SMART SOFT TOUCH HEAVYWEIGHT T-SHIRT _ - T-shirt basic - neutral raglan.jpg', 'rx-men-knit-polo']
   ]);
   const imageBackedMenProducts = menImageManifest.map((image, index) => {
     const name = `${image.subcategory.replace(/s$/, '')} ${String(index + 1).padStart(2, '0')}`;
