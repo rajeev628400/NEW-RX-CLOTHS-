@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your RX CLOTHS account.">
+  <title>Account | RX CLOTHS</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/men-image-manifest.js" defer></script>
+  <script src="js/women-image-manifest.js" defer></script>
+  <script src="js/kids-image-manifest.js" defer></script>
+  <script src="js/product-data.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/supabase-config.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase-client.js" defer></script>
+  <script src="js/store-api.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/storefront.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="RX CLOTHS home">RX <span>CLOTHS</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation"><a href="men.html">Men</a><a href="women.html">Women</a><a href="kids.html">Kids</a><a href="about.html">Our story</a></nav>
+    <div class="header-actions"><a href="search.html">Search</a><a href="wishlist.html">Wishlist</a><a href="cart.html">Bag</a></div>
+  </header>
+  <main id="main-content" class="page-main auth-main">
+    <p class="eyebrow">Your details</p><h1>Account</h1>
+    <section class="story-panel auth-panel">
+      <div data-auth-signed-out>
+        <h2>Sign in to your account</h2>
+        <p>Account details are available after you sign in.</p>
+        <a class="button button-dark" href="login.html">Log in</a>
+        <p>New to RX CLOTHS? <a class="inline-link" href="signup.html">Create an account</a></p>
+      </div>
+      <div data-auth-signed-in hidden>
+        <h2>Your account</h2>
+        <p>Signed in as <strong data-auth-email></strong></p>
+        <section class="account-addresses">
+          <h2>Shipping addresses</h2>
+          <form class="auth-form" data-address-form>
+            <input type="hidden" name="id">
+            <label>Recipient name<input type="text" name="recipient_name" autocomplete="name" maxlength="120" required></label>
+            <label>Phone<input type="tel" name="phone" autocomplete="tel" maxlength="32"></label>
+            <label>Address line 1<input type="text" name="address_line_1" autocomplete="address-line1" maxlength="200" required></label>
+            <label>Address line 2<input type="text" name="address_line_2" autocomplete="address-line2" maxlength="200"></label>
+            <label>City<input type="text" name="city" autocomplete="address-level2" maxlength="120" required></label>
+            <label>State / region<input type="text" name="region" autocomplete="address-level1" maxlength="120"></label>
+            <label>Postal code<input type="text" name="postal_code" autocomplete="postal-code" maxlength="24" required></label>
+            <label>Country code (2 letters)<input type="text" name="country_code" autocomplete="off" pattern="[A-Za-z]{2}" minlength="2" maxlength="2" value="IN" required></label>
+            <label><input type="checkbox" name="is_default"> Make this my default shipping address</label>
+            <button class="button button-dark" type="submit">Add address</button>
+            <button class="button button-outline" type="reset">Clear form</button>
+          </form>
+          <p class="auth-status" data-address-status role="status" aria-live="polite"></p>
+          <div data-address-list></div>
+        </section>
+        <button class="button button-outline auth-logout" type="button" data-auth-logout>Log out</button>
+      </div>
+      <p class="auth-status" data-auth-status role="status" aria-live="polite">Checking authentication setup…</p>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="wordmark footer-wordmark" href="index.html">RX <span>CLOTHS</span></a><nav aria-label="Footer navigation"><a href="contact.html">Contact</a><a href="faq.html">FAQs</a><a href="account.html">Account</a><a href="orders.html">Orders</a></nav><p>© <span data-current-year>2026</span> RX CLOTHS. A project in progress.</p></footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sign in to your RX CLOTHS account.">
+  <title>Log in | RX CLOTHS</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/men-image-manifest.js" defer></script>
+  <script src="js/women-image-manifest.js" defer></script>
+  <script src="js/kids-image-manifest.js" defer></script>
+  <script src="js/product-data.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/supabase-config.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase-client.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="RX CLOTHS home">RX <span>CLOTHS</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation"><a href="men.html">Men</a><a href="women.html">Women</a><a href="kids.html">Kids</a><a href="about.html">Our story</a></nav>
+    <div class="header-actions"><a href="search.html">Search</a><a href="wishlist.html">Wishlist</a><a href="cart.html">Bag</a></div>
+  </header>
+  <main id="main-content" class="page-main auth-main">
+    <p class="eyebrow">Your account</p><h1>Log in</h1>
+    <section class="story-panel auth-panel">
+      <h2>Welcome back</h2>
+      <p>Sign in to access your RX CLOTHS account.</p>
+      <form class="auth-form" data-auth-login>
+        <label>Email address<input type="email" name="email" autocomplete="email" required></label>
+        <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+        <button class="button button-dark" type="submit">Log in</button>
+      </form>
+      <p>New to RX CLOTHS? <a class="inline-link" href="signup.html">Create an account</a></p>
+      <details>
+        <summary>Forgot your password?</summary>
+        <form class="auth-form" data-auth-reset-request>
+          <label>Email address<input type="email" name="email" autocomplete="email" required></label>
+          <button class="button button-outline" type="submit">Send reset link</button>
+        </form>
+      </details>
+      <p class="auth-status" data-auth-status role="status" aria-live="polite">Checking authentication setup…</p>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="wordmark footer-wordmark" href="index.html">RX <span>CLOTHS</span></a><nav aria-label="Footer navigation"><a href="contact.html">Contact</a><a href="faq.html">FAQs</a><a href="account.html">Account</a><a href="orders.html">Orders</a></nav><p>© <span data-current-year>2026</span> RX CLOTHS. A project in progress.</p></footer>
+</body>
+</html>
