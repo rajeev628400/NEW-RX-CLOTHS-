@@ -252,6 +252,9 @@ test('static SEO fallback files are present without inventing a public domain', 
   assert.match(headers['Content-Security-Policy'], /script-src[^;]*https:\/\/www\.googletagmanager\.com/);
   assert.match(headers['Content-Security-Policy'], /'sha256-sZitcj\+5OPnqWfp85LKu\+W62fPr1HDjqk5a\+DaHoFO4='/);
   assert.match(headers['Content-Security-Policy'], /frame-src https:\/\/www\.googletagmanager\.com/);
+  assert.match(headers['Content-Security-Policy'], /img-src[^;]*https:\/\/www\.googletagmanager\.com/);
+  assert.match(headers['Content-Security-Policy'], /img-src[^;]*https:\/\/images\.unsplash\.com/);
+  assert.doesNotMatch(headers['Content-Security-Policy'], /img-src[^;]*\*/);
   assert.match(headers['Content-Security-Policy'], /https:\/\/pruhywawkvqqrapvvoef\.supabase\.co/);
   assert.equal(headers['X-Content-Type-Options'], 'nosniff');
   assert.equal(headers['X-Frame-Options'], 'DENY');
